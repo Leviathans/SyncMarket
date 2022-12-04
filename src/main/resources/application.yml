@@ -1,0 +1,26 @@
+server:
+  shutdown: graceful
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
+logging:
+  config: classpath:log4j2-spring.xml
+
+wss:
+  u_huobi_url: wss://api-aws.huobi.pro/ws
+  s_huobi_url: wss://api.hbdm.com/swap-ws
+  u_binance_url: wss://fstream.binance.com/ws
+  s_binance_url: wss://dstream.binance.com/ws
+
+zk:
+  path: /master
+  url: 127.0.0.1:2181
